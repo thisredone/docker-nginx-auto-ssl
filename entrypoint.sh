@@ -41,11 +41,6 @@ if [ -n "$SITES" ]; then
   done
   unset SERVER_NAME SERVER_ENDPOINT
 
-
-# if $SITES isn't defined, let's check if $NGINX_CONF_DIR is empty
-elif [ ! "$(ls -A ${NGINX_CONF_DIR})" ]; then
-  # if yes, just copy default server (similar to default from docker-openresty, but using https)
-  cp ${RESTY_CONF_DIR}/server-default.conf ${NGINX_CONF_DIR}/default.conf
 fi
 
 
